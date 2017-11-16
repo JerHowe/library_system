@@ -27,11 +27,11 @@
             <!-- Default panel contents -->
             <div class="panel-heading">
               <h2>Books
-                <div class="btn btn-success glyphicon glyphicon-plus pull-right"></div>
+                <button class="btn btn-success glyphicon glyphicon-plus pull-right" data-toggle="modal" data-target="#addBookModal"></button>
               </h2>
             </div>
 
-            <!-- Table -->
+            <!-- BOOK TABLE -->
             <table id="bookTable" class="table table-striped">
               <!-- This is just to offset the striping effect from Bootstrap  -->
               <tr></tr>
@@ -44,23 +44,13 @@
             <!-- Default panel contents -->
             <div class="panel-heading">
               <h2>Borrowers
-                <div class="btn btn-success glyphicon glyphicon-plus pull-right"></div>
+                <button class="btn btn-success glyphicon glyphicon-plus pull-right" data-toggle="modal" data-target="#addBorrowerModal"></button>
               </h2>
             </div>
 
-            <!-- Table -->
-            <table class="table table-striped">
-              <tr>
-              </tr>
-              <tr>
-                <td>Borrower Name</td>
-              </tr>
-              <tr>
-                <td>Borrower Name</td>
-              </tr>
-              <tr>
-                <td>Borrower Name</td>
-              </tr>
+            <!-- BORROWER TABLE -->
+            <table id="borrowerTable" class="table table-striped">
+              <tr></tr>
             </table>
           </div>
         </div>
@@ -68,12 +58,79 @@
 
     </div>
 
-    <section id="templates">
+    <!-- ========================== MODALS ================================ -->
+
+    <!-- Add Book Modal -->
+    <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog" aria-labelledby="addBookModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title" id="addBookModalLabel">Add a Book!</h3>
+          </div>
+          <div class="modal-body">
+
+            <form id="addBookForm">
+
+              <div class="form-group input-group">
+                  <span class="input-group-addon"><div class="glyphicon glyphicon-book"></div></span>
+                  <input class="form-control addBookTitle" type="text" name="bookTitle" placeholder="Book Title">
+              </div>
+              <div class="form-group">
+                <textarea name="bookDescription" rows="4" placeholder="Description" class="form-control addBookDescription"></textarea>
+              </div>
+              <div class="form-group input-group">
+                <span class="input-group-addon"><div class="glyphicon glyphicon-picture"></div></span>
+                <input class="form-control addBookImageURL" type="text" name="bookImageURL" placeholder="Image URL">
+              </div>
+
+            </form>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button id="createBookButton" type="button" class="btn btn-primary">Add Book</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Borrower Modal -->
+    <div class="modal fade" id="addBorrowerModal" tabindex="-1" role="dialog" aria-labelledby="addBorrowersModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title" id="addBorrowersModalLabel">Modal title</h3>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========================== TEMPLATES ============================= -->
+    <section id="templates" class="hidden">
       <table>
+
         <tr class="book" data-id="some-id">
-          <td><img class="img-responsive bookImage" src="some_url" alt="The Golden Compass"></td>
+          <td><img class="img-responsive bookImage" src="" alt=""></td>
           <td class="bookTitle">Book Title</td>
         </tr>
+
+        <tr class="borrower" data-id="some-id">
+          <td class="borrowerFirstName">First Name</td>
+          <td class="borrowerLastName">Last Name</td>
+        </tr>
+
       </table>
     </section>
 
