@@ -32,21 +32,9 @@
             </div>
 
             <!-- Table -->
-            <table class="table table-striped">
-              <tr>
-              </tr>
-              <tr class="book" data-id="some-id">
-                <td><img class="img-responsive" src="https://images.gr-assets.com/books/1505766203l/119322.jpg" alt="The Golden Compass"></td>
-                <td>Book Title</td>
-              </tr>
-              <tr>
-                <td>IMG</td>
-                <td>Book Title</td>
-              </tr>
-              <tr>
-                <td>IMG</td>
-                <td>Book Title</td>
-              </tr>
+            <table id="bookTable" class="table table-striped">
+              <!-- This is just to offset the striping effect from Bootstrap  -->
+              <tr></tr>
             </table>
           </div>
 
@@ -83,8 +71,8 @@
     <section id="templates">
       <table>
         <tr class="book" data-id="some-id">
-          <td><img class="img-responsive" src="https://images.gr-assets.com/books/1505766203l/119322.jpg" alt="The Golden Compass"></td>
-          <td>Book Title</td>
+          <td><img class="img-responsive bookImage" src="some_url" alt="The Golden Compass"></td>
+          <td class="bookTitle">Book Title</td>
         </tr>
       </table>
     </section>
